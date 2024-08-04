@@ -1,0 +1,39 @@
+<body>
+<header>
+  <h1>Fruit Tea Shop</h1>
+  <nav>
+    <button class="nav-button" (click)="scrollToSection('card-container')">Products</button>
+    <button class="nav-button" (click)="scrollToSection('cart-container')">Cart</button>
+  </nav>
+</header>
+
+<div id="card-container">
+  @for (prod of this.cartService.products; track $index) {
+    <div class="card-holder">
+      <app-card
+        [id]="prod.id"
+        [name]="prod.name"
+        [description]="prod.description"
+        [price]="prod.price"
+        [inStock]="prod.inStock"
+      ></app-card>
+    </div>
+  }
+</div>
+
+<div id="cart-container">
+  <div class="header">
+    <h2>Cart</h2>
+    <h3>Total: {{ this.totalMoney }} VND</h3>
+  </div>
+  @for (item of this.cartService.cart; track $index) {
+    <p>{{ item.name }} - {{ item.price }} VND - {{ item.quantity }}</p>
+    <button (click)="removeFromCart($index)">Delete</button>
+  }
+</div>
+
+<footer>
+  <p>&copy; 2024 Fruit Tea Shop. All rights reserved.</p>
+</footer>
+</body>
+

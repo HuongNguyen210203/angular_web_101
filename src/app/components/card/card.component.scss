@@ -1,0 +1,56 @@
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-holder {
+  margin: 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  gap: 5px;
+  box-shadow: 0 4px 4px rgba(0.1, 0.1, 0.1, 0.1);
+}
+
+.example-card {
+  max-width: 200px;
+  max-height: 350px;
+}
+
+
+.card-holder h1 {
+  font-size: 20px;
+  color: brown;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+mat-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #020122;
+}
+
+mat-card-subtitle {
+  font-size: 16px;
+}
+
+.card-holder p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+button {
+  margin-top: 20%;
+}
