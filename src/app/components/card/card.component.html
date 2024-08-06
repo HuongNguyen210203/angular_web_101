@@ -2,26 +2,27 @@
   <div class="card-holder">
     <mat-card class="example-card" appearance="outlined">
       <mat-card-header>
-        <mat-card-title>{{ this.name }}</mat-card-title>
-        <span><mat-card-subtitle>{{ this.price }}</mat-card-subtitle></span>
+        <mat-card-title>{{ this.product.name }}</mat-card-title>
+        <span><mat-card-subtitle>{{ this.product.price }}</mat-card-subtitle></span>
       </mat-card-header>
       <img mat-card-image
-           src="https://product.hstatic.net/200000399631/product/nang_dd840ca67504440186053f6512d5c319_1024x1024.jpg"
+           src="{{ this.product.imageUrl }}"
            alt="Photo of a drink">
       <mat-card-content>
-        <p style="color: #020122">{{ this.description }}</p>
-        <p style="font-weight: bold;">Hiện đang có: {{ this.inStock }} ly</p>
+        <p style="color: #020122">{{ this.product.description }}</p>
+        <p style="font-weight: bold;">Hiện đang có: {{ this.product.inStock }} ly</p>
       </mat-card-content>
     </mat-card>
 
 
     <button style="background-color: #FFAE03; color: #020122" mat-flat-button (click)="addToCart({
-      id: this.id,
-      name: this.name,
-      price: this.price,
-      quantity: 1,
-    })">Buy now
+      name: this.product.name,
+      price: this.product.price,
+      quantity: 1
+ })">Buy now
     </button>
   </div>
 </div>
+
+<!--src="{{ this.product.imageUrl }}-->
 

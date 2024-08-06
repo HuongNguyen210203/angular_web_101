@@ -1,0 +1,37 @@
+<!-- src/app/product-detail/product-detail.component.html -->
+<div id="product-detail-container">
+  <div class="product-image">
+    <img [src]="detailProduct.imageUrl" alt="{{ detailProduct.name }}">
+    <div class="product-info">
+      <h1>{{ detailProduct.name }}</h1>
+      <p class="description">{{ detailProduct.bigDescription }}</p>
+      <p class="in-stock" style="font-weight: bold">Hiện đang có: {{ detailProduct.inStock }} ly</p>
+
+      <div class="select-container">
+
+        <div class="select-container-title">
+          <h1>Chọn size:</h1>
+        </div>
+
+        <div class="select-container-radio">
+          <label>
+            <input class="variant-0" id="swatch-0-size-m" type="radio" name="option1" value="Size M"
+                   [(ngModel)]="selectedSize"> Size M
+          </label>
+          <label>
+            <input class="variant-0" id="swatch-0-size-l" type="radio" name="option1" value="Size L"
+                   [(ngModel)]="selectedSize"> Size L
+          </label>
+        </div>
+      </div>
+
+      <button mat-flat-button (click)="addToCart(detailProduct)">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+
+  <!--  <div class="product-image">-->
+  <!--    <img [src]="detailProduct.imageUrl" alt="{{ detailProduct.name }}">-->
+  <!--  </div>-->
+</div>

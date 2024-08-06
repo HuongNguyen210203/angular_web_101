@@ -1,8 +1,10 @@
-import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
-import {CardComponent} from './components/card/card.component';
-import {NgForOf} from '@angular/common';
-import {CartService} from './services/cart.service';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { CardComponent } from './components/card/card.component';
+import { NgForOf } from '@angular/common';
+import { CartService } from './services/cart.service';
+import { RouterLink } from '@angular/router';
+
 import {
   MatCard,
   MatCardActions,
@@ -11,6 +13,7 @@ import {
   MatCardSubtitle,
   MatCardTitle,
 } from '@angular/material/card';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +28,7 @@ import {
     MatCardSubtitle,
     MatCardHeader,
     MatCard,
+    RouterLink,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -32,8 +36,10 @@ import {
 export class AppComponent {
   title = 'Demo01';
 
-  constructor(public cartService: CartService) {
-  }
+  constructor(
+    public cartService: CartService,
+    public authService: AuthService,
+  ) {}
 
   get cart(): any[] {
     return this.cartService.getCart();
@@ -53,7 +59,14 @@ export class AppComponent {
     this.cartService.removeFromCart(index);
   }
 
-  scrollToSection(cardContainer: string) {
+  scrollToSection(cardContainer: string) {}
 
+  login() {
+    this.authService.login();
+    //render avatar photo
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

@@ -5,6 +5,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { NgOptimizedImage } from '@angular/common';
+import { ProductModel } from '../../models/product.model';
 
 @Component({
   selector: 'app-card',
@@ -20,16 +21,11 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
+  @Input() product!: ProductModel;
+
   constructor(public cartService: CartService) {}
 
   addToCart(value: any) {
     this.cartService.addToCart(value);
   }
-
-  @Input() id: number = 0;
-  @Input() name: string = '';
-  @Input() description: string = '';
-  @Input() price: number = 0;
-  @Input() inStock: number = 0;
-  @Input() imageUrl: string | undefined = '';
 }

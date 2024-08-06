@@ -3,13 +3,52 @@ body {
   font-family: Open-Sans, sans-serif;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #447604;
+  padding: 10px;
+}
+
+#ava {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  border-radius: 20%;
+}
+
+#ava img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 header {
+  max-height: 25%;
   background-color: #447604;
   color: #FFAE03;
-  padding: 1rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 header h1 {
@@ -17,9 +56,6 @@ header h1 {
   font-weight: bold;
 }
 
-nav {
-  margin-top: 1rem;
-}
 
 .nav-button {
   background-color: #fff;
@@ -37,14 +73,18 @@ nav {
   color: #fff;
 }
 
+
 #card-container {
+  height: 72%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 3%;
+  margin-bottom: 1%;
   margin-top: 2%;
+  overflow: auto;
 }
+
 
 #cart-container {
   position: fixed;
@@ -59,13 +99,7 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#cart-container h2 {
-  font-size: 24px;
-  color: #020122;
-  font-weight: bold;
-}
-
-#cart-container h3 {
+#cart-container h2, #cart-container h3 {
   font-size: 20px;
   color: #020122;
   font-weight: bold;
@@ -80,15 +114,19 @@ nav {
   border: 3px solid #447604;
   border-radius: 5px;
   background-color: whitesmoke;
+  padding: 10px 20px;
 }
+
 
 footer {
   background-color: #447604;
   color: whitesmoke;
   text-align: center;
   padding: 5px;
-  position: fixed;
   bottom: 0;
   width: 100%;
+  height: 3%;
+  position: fixed;
 }
+
 
